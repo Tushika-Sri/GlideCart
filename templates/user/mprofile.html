@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+ Developer
+{% endblock%}
+
+{% block content%}
+<div class="text-center fs-1 py-2">
+  Developer's<b class="txtcolor"> Profile<i class="fa-regular fa-address-card"></i></b>
+</div>
+<div class="embed-responsive embed-responsive mt-4" width="100%">
+  <iframe class="embed-responsive-item mx-auto" width="100%" height="800" src="{% static "portfolio/finalport.html" %}" allowfullscreen></iframe>
+</div>
+{% endblock%}

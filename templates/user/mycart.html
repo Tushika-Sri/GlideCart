@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+  About Us
+{% endblock%}
+
+{% block content%}
+{% if not request.session.user %}
+<script>
+    alert('Ypu have to login first');
+    location.href='/user/signin/';
+</script>
+{% endif %}
+{% endblock%}

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+Customer Support
+{% endblock%}
+
+{% block content%}
+<style>
+  form-control {
+    height: 45px;
+    margin-top: 15px;
+
+  }
+
+  .ytt {
+    margin: auto 130px;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    padding: 20px;
+    background: white;
+    opacity: 0.9;
+    border-radius: 60px;
+    transition: all 1s;
+    box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;
+  }
+
+  .re {
+    box-shadow: 0px 0px 8px 3px rgba(0, 0, 2);
+    border-radius: 20px;
+    transform: translateY(-300px);
+    background: white;
+  }
+
+  .re:hover {
+    border-radius: 10px;
+    background: rgb(85, 126, 102);
+    transition: all 2s;
+    box-shadow: 0px 0px 8px 15px rgb(82, 82, 82);
+    color: white;
+
+  }
+
+  .ft {
+    background: url('../../static/images/later.png');
+    background-size: cover;
+    min-height: 500px;
+    opacity: 0.8;
+  }
+
+</style>
+<div class="row ft">
+  <div class="text-center fs-1 py-2">
+    Contact<b class="txtcolor">Us<i class="fa-regular fa-address-card"></i></b>
+  </div>
+</div>
+<div class="row ">
+  <div class="col-sm-10 mx-auto">
+    <div class="row ">
+      <div class="col-sm-6 re my-5" style="opacity: 0.7;">
+        <div style="font-size:45px">Send Message</div>
+        <form method="post" class=" p-4">
+          {% csrf_token %}
+          <label class="fs-3">Name</label><input type="text" name="name" placeholder="Name.." class="form-control "
+            style="height: 50px; border-radius: 10px; width: 95%; margin:0px 5px 0px 10px;box-shadow: 0px 0px 5px  black; border: none;  font-size: 25px;">
+          <label class="fs-3">Email</label><input type="email" name="email" placeholder="Email.." class="form-control "
+            style="height: 50px; border-radius: 10px; width: 95%; margin:0px 5px 0px 10px;box-shadow: 0px 0px 5px  black; border: none;  font-size: 25px;">
+          <label class="fs-3">Mobile</label><input type="number" name="mobile" placeholder="Mobile.."
+            class="form-control "
+            style="height: 50px; border-radius: 10px; width: 95%; margin:0px 5px 0px 10px;box-shadow: 0px 0px 5px  black; border: none;  font-size: 25px;">
+          <label class="fs-3">Message</label><textarea name="message" class="form-control " cols="10" rows="5"
+            style=" border-radius: 10px; width: 95%; margin:0px 5px 0px 10px;box-shadow: 0px 0px 5px  black; border: none;  font-size: 25px;"></textarea>
+          <input type="submit" value="Save" class="btn btn-large px-5 py-2  fs-5 bg-mycolor text-light mt-4">
+        </form>
+      </div>
+      <div class="col-sm-4 text-center ytt " style="transform: translateY(-200px);justify-content: center;">
+        <div class=" fs-1"><b>WE ARE HERE FOR YOU!</b></div>
+        <div class="fs-2 ">Get in touch. We'd </div>
+        <div class=""><i class="fa-solid fa-heart " style="color: red;display: flex;margin-left: 250px;"></i></div>
+        <div class=" fs-2 ">to hear from you.</div>
+         
+    </div>
+  </div>
+</div>
+
+{% endblock %}

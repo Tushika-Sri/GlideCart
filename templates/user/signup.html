@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+  Sign Up
+{% endblock%}
+
+{% block content%}
+<style>
+  .form-control{
+  height:50px;
+  margin-bottom: .8%;
+  }
+  .pt{
+    border-radius: 10px;border:2px solid rgb(177, 177, 177);
+  }
+  .ft{
+    background: url('../../static/images/aple (2).jpg');
+    background-size: cover;
+    min-height: 1000px;
+  }
+  .l{
+    height:650px;
+
+  }
+</style>
+<div class="row ft">
+
+<div class="text-center bg-dark text-light fs-1  mt-5" style="height: 70px;line-height: 70px;">
+  Sign<b class="txtcolor">Up<i class="fa-solid fa-user"></i></b>
+</div>
+<div class="row " >
+  <div class="col-sm-10 mx-auto m-4">
+    <div class="row" style="border:2px solid rgb(239, 238, 238);transform: translateX(-100px);border-radius: 20px;box-shadow: 0px 0px 5px 5px rgb(170, 170, 170);">
+       <div class="col-sm-8 p-5 bg-secondary" style="opacity: 0.9;border-radius:20px ;" >
+         <form method="post" enctype="multipart/form-data">
+           {% csrf_token %}
+           <div class="row" >
+
+           <div class="col-sm-6 ">
+           <h4 style="color:rgb(173, 158, 158)">Name</h4 ><input type="text"  required name="name" placeholder="Name.."  class="form-control pt"/>
+           </div>
+           <div class="col-sm-6 ">
+            <h4 style="color:rgb(173, 158, 158)">Email</h4 ><input type="email" required name="email" placeholder="Email.." class="form-control pt"/>
+           </div>
+          </div>
+              <h4 style="color:rgb(173, 158, 158)">Mobile</h4 ><input type="number" required name="mobile" placeholder="Mobile.." class="form-control pt"/>
+           <h4 style="color:rgb(173, 158, 158)">Password</h4 ><input type="password" required name="passwd" placeholder="Password.." class="form-control pt"/>
+            <h4 style="color:rgb(173, 158, 158)">Profile Picture</h4 ><input type="file" required name="fu" class="form-control pt"/>
+              <h4 style="color:rgb(173, 158, 158)">Address</h4 ><textarea class="form-control pt" placeholder="Message.." name="address"></textarea>
+           <input type="submit" value="Save" class="btn bg-mycolor mt-3" style="font-size: 20px;color:white;background: rgb(148, 147, 147) !important;box-shadow:0px 0px 5px 5px rgb(199, 199, 199);" >
+
+         </form>
+       </div>
+       <div class="col-sm-4 ">
+         <img src="{% static 'images/aple (1).jpg'%}" class=" w-100 l" style="opacity:0.8;border-radius: 10px;"/>
+       </div>
+    </div>
+  </div>
+</div>></div>
+{% endblock%}

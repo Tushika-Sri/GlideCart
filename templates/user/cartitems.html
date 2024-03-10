@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+  Cart Items
+{% endblock%}
+
+{% block content%}
+<style>
+  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #fafaeb;
+}
+
+</style>
+<div class="text-center fs-1 py-2">
+  Our Cart <b class="txtcolor">Items<i class="fa-solid fa-cart-shopping"></i></b>
+</div>
+{% if not request.session.user %}
+<script>
+    alert('Ypu have to login first');
+    location.href='/user/signin/';
+</script>
+{% endif %}
+
+<div class="row">
+    <div class="col-sm-8 mx-auto">
+        <!--cart items-->
+        {% for i in cartdata %}
+         <div class="card mb-3 youprcolor">
+  <div class="row g-0">
+    <div class="col-md-2 p-2">
+      <img src="/{{i.product_picture}}" class="img-fluid rounded-start" alt="..." style="height:130px;width:130px;">
+    </div>
+    <div class="col-md-10">
+      <div class="card-body">
+        <table class="table table-hover p">
+            <tr>
+                <th>Cart Id</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+                <th>Added Data</th>
+                <th>Cancel</th>
+            </tr>
+            <tr>
+                <td>ZEPTO10{{i.id}}</td>
+                <td><b>{{i.product_name}}</b>
+                   <br> <small>{{i.pw}}</small>
+                </td>
+                <td>{{i.quantity}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.total_price}}</td>
+                <td>{{i.added_date}}</td>
+                <td><a href="/user/cartitems?cid={{i.id}}" class="btn bg-mycolor text-light btn-sm">Remove <i class="fa-solid fa-trash"></i> </a></td>
+            </tr>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+        {% endfor %}
+        <a href="/user/order?msg=1" class=" btn btn-large px-5 py-2  fs-5 bg-mycolor text-light">Check out</a>
+        <!--end cart items-->
+    </div>
+</div>
+{% endblock%}

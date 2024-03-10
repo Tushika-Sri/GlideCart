@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    {% block title%}
+    {% endblock%}
+  </title>
+  <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" />
+  <link href="{% static 'css/all.css'%}" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+  {% block about%}
+  {% endblock%}
+  <style>
+    :root {
+      --bgclr: linear-gradient(60deg, #79927d, #252527);
+      --txtclr: #D50000;
+      --ytxtclr: #79927d;
+      --youcolor: #f6f6f0;
+    }
+    .youprcolor {
+            background: var(--youcolor);
+        }
+    .ytxtcolor{
+      color: var(--ytxtclr);
+    }
+    .ybgclr{
+      background: var(--ytxtclr);
+    }
+
+    .bg-mycolor {
+      background: var(--bgclr) !important;
+    }
+
+    .txtcolor {
+      color: var(--txtclr);
+    }
+
+    #menu {
+      background: transparent !important;
+    }
+
+    #menu ul li a {
+      color: white;
+    }
+
+    .ufooter {
+      min-height: 300px;
+    }
+
+    .bfooter {
+      min-height: 50px;
+    }
+
+    .icon {
+
+      
+      text-decoration: none;
+      margin: 2px;
+      padding: 1px;
+      transition: all 1s;
+    }
+
+    .icon:hover {
+      transform: rotate(360deg);
+      transition: all 1s;
+      background: white;
+      color:  #79927d;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    
+    <div class="row t2">
+      <div class="col-sm-10 mx-auto py-2">
+        <div class="row">
+          <div class="col-sm-4 fs-1">Glide<b class="txtcolor">Cart<i class="fa-brands fa-glide-g"></i></b></div>
+          <div class="col-sm-3">
+
+
+          </div>
+          <div class="col-sm-3 text-end">
+            {% if request.session.user %}
+            <a href="/user/cartitems/" class="btn bg-mycolor text-light fs-5"><i class="fa-solid fa-cart-shopping"></i>
+              Items<b class="badge bg-light txtcolor">{{ request.session.cartitems}}</b>
+            </a>
+            <a href="/user/cartitems/" class="btn bg-mycolor text-light fs-5">My Orders<i class="fa-solid fa-truck-fast"></i>
+
+            </a>
+            {% else %}
+            <a href="/user/cartitems/" class="btn bg-mycolor text-light"><i class="fa-solid fa-cart-shopping"></i>
+              Items<b class="badge bg-light txtcolor">0</b>
+            </a>
+            {% endif %}
+          </div>
+          <div class="col-sm-2">
+            {% if request.session.user %}
+            <a style="text-decoration:none;" href="/user/myprofile/">{{request.session.username}}
+              <img src="/{{request.session.userpic}}" style="max-height:45px;" class="img-thumbnail">
+            </a>
+            {% else %}
+
+            <a class="nav-link disabled" href="#">Default User
+              <img src="{% static 'images/def_user.jpeg'%}" style="max-height:45px;" class="img-thumbnail">
+            </a>
+
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row t3 bg-mycolor">
+      <div class="col-sm-6 mx-auto">
+        <!--start menu-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary  fs-5" id="menu">
+          <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/user/index/"><i class="fa-solid fa-house"></i>
+                    <b>Home</b></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user/about/"><i class="fa-solid fa-address-card"></i> About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user/product/"><i class="fa-brands fa-product-hunt"></i> Product</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user/customer/"><i class="fa-solid fa-address-book"></i> Customer
+                    Support</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user/signup/"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user/myprofile/"><i class="fa-solid fa-user"></i> My Profile</a>
+                </li>
+                {% if request.session.user %}
+                <li class="nav-item">
+                  <a class="nav-link" href="/user/signout/"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="/user/signin/"><i class="fa-solid fa-right-to-bracket"></i> Sign In</a>
+                </li>
+                {% endif %}
+
+
+              </ul>
+
+            </div>
+          </div>
+        </nav>
+
+        <!--end menu-->
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-sm-12 py-4" style="min-height:500px">
+        {% block content %}
+
+        {% endblock %}
+      </div>
+    </div>
+
+    <div class="row ufooter bg-dark">
+      <div class="col-md-10 mx-auto">
+        <div class="row">
+          <div class="col-md-4 text-light my-4">
+            <div class="mt-4 " style="font-size: 60px;">Glide<b class="txtcolor">Cart<i class="fa-brands fa-glide-g"></i></b></div>
+             <div class="fs-5" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Where Every Click is a Glide Closer to Happiness</div>
+             <div class="fs-4 mt-4 " >
+             <a href="emailto:tushi0911@gmail.com" style="text-decoration: none;color: white;"><i class="fa-solid fa-envelope icon"></i></a>
+             <a href="" style="text-decoration: none;color: white;"><i class="fa-brands fa-square-twitter icon"></i></a> 
+             <a href="" style="text-decoration: none;color: white;"><i class="fa-brands fa-square-instagram  icon"></i></a> 
+             <a href="www.linkedin.com/in/tushika-srivastava-software-developer" style="text-decoration: none;color: white;"><i class="fa-brands fa-linkedin-in  icon"></i></a> 
+             <a href="" style="text-decoration: none;color: white;"><i class="fa-brands fa-square-whatsapp  icon"></i></a> 
+             
+             </div>
+          </div>
+          <div class="col-md-2 text-light my-4">
+            <div class="row fs-3"><b>Useful Links</b></div>
+            <div class="row">
+              <div class="col-sm-12 fs-5">
+                <div class="row my-2"><a href="/user/about/" style="text-decoration: none;color: white;">About</a></div>
+                <div class="row my-2"><a href="/user/product/" style="text-decoration: none;color: white;">Products</a>
+                </div>
+                <div class="row my-2"><a href="/user/customer/" style="text-decoration: none;color: white;">Customer
+                    Support</a></div>
+                <div class="row my-2"><a href="/user/privacy/" style="text-decoration: none;color: white;">Privacy</a>
+                </div>
+               
+              </div>
+
+
+            </div>
+          </div>
+          <div class="col-md-3 my-4 text-light">
+            <div class="row fs-3 "> <b>For Developer</b></div>
+            <p class="fs-5"> <a href="/user/mprofile/" style="text-decoration: none;color: white;">Developer's Profile</a></p><br>
+           <div class="row fs-3"> <b>For Enterprise</b></div>
+            <p class="fs-5"><a href="/user/index/" style="text-decoration: none;color: white;">GlideCart for Enterprise</a></p>
+          </div>
+        
+
+
+          <div class="col-md-3 text-light my-4">
+            <div class="my-2"><img src="{% static 'images/foo1.png'%}" alt="" class="img-fluid"
+              style="max-height: 70px;">
+          </div>
+          <div class="my-2"><img src="{% static 'images/foo2.png'%}" alt="" class="img-fluid"
+              style="max-height: 70px;">
+          </div>
+          <div class="my-2"><img src="{% static 'images/foo3.png'%}" alt="" class="img-fluid"
+              style="max-height: 70px;">
+          </div>
+           
+           
+           
+              
+            </div>
+          </div>
+        
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+
+    <div class="row bfooter bg-dark mt-1 py-3 text-light">
+      <div class="col-sm-12 text-center">
+        &#169;2023 GlideCart | All rights reserved</div>
+
+
+        
+       
+
+
+    </div>
+
+  </div>
+
+  <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+
+</body>
+
+</html>

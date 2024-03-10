@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+  My Profile
+{% endblock%}
+
+{% block content%}
+<style>
+  .fss{
+   border:1px solid var(--txtclr) !important;
+   color:var(--txtclr);
+   height:35px;
+   width:40px;
+   text-align:center;
+   line-height:35px;
+  }
+  form{
+   
+    border-radius: 10px;
+    
+    
+  }
+  .form-control{
+  height:50px;
+  margin-bottom: .8%;
+  border: 1px solid black;
+  
+  }
+  #upform{
+  display:none;
+  }
+  .bt {
+border-radius: 10px;
+box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;
+padding: 10px;
+transition: all 1s;
+}
+
+.bt:hover {
+box-shadow: rgb(172, 172, 172) 5px 5px 10px 0px inset, rgb(255, 255, 255) -5px -5px 10px 0px  inset;
+transform: skew(.4);
+ box-shadow:0px 0px 13px 10px rgb(172, 172, 172);
+ transition: all 1s;
+}
+.rh{
+    box-shadow:0px 0px 13px 4px rgb(241, 241, 241);
+}
+</style>
+<script>
+  function demo()
+  {
+   document.getElementById('upform').style.display="block";
+  }
+</script>
+<div class="text-center fs-1 py-2">
+  My<b class="txtcolor">Profile <i class="fa-solid fa-user"></i></b>
+</div>
+{% if not request.session.user %}
+<script>
+  alert('You have to login first');
+  location.href="/user/signin/";
+</script>
+{% endif %}
+<div class="row pt-5">
+  <div class="col-sm-8 mx-auto">
+    <!--my profile-->
+    {% for i in rdata %}
+    <div class="card mb-3 youprcolor bt" >
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{i.profile}}" class="img-fluid rounded-start rh" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body p-5">
+
+        <p class="card-text">
+          <i class="fa-solid fa-user fss"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{i.name}}<br>
+          <i class="fa-solid fa-envelope fss"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{i.email}} <br>
+          <i class="fa-solid fa-phone fss"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{i.mobile}} <br>
+          <i class="fa-solid fa-lock fss"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{i.passwd}}<br>
+          <i class="fa-solid fa-location-dot fss"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{i.address}}<br><br>
+          <a href="#" class="btn btn-sm  text-light bg-mycolor p-2 fs-5" onclick="demo()">Edit Profile&nbsp;&nbsp;<i class="fa-solid fa-pen-to-square fss"></i></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+    {% endfor %}
+    <!-- end profile-->
+  </div>
+</div>
+<div class="row py-3 mt-3" id="upform">
+
+     <div class="col-sm-7 mx-auto">
+         <form method="post" enctype="multipart/form-data" class="youprcolor p-5 bt">
+           {% csrf_token %}
+           <label class="fs-3">Name</label><input type="text" required name="name" placeholder="Name.." class="form-control mx-auto"  style="height: 50px; border-radius: 10px; width: 95%; margin:0px 5px 0px 10px;box-shadow: 0px 0px 5px  black; border: none;  font-size: 25px;"/><br>
+           <label class="fs-3">Mobile</label><input type="number" required name="mobile" placeholder="Mobile.." class="form-control mx-auto"  style="height: 50px; border-radius: 10px; width: 95%; margin:0px 5px 0px 10px;box-shadow: 0px 0px 5px  black; border: none;  font-size: 25px;"/><br>
+           <label class="fs-3">Password</label><input type="password" required name="passwd" placeholder="Password.." class="form-control mx-auto"  style="height: 50px; border-radius: 10px; width: 95%; margin:0px 5px 0px 10px;box-shadow: 0px 0px 5px  black; border: none;  font-size: 25px;"/><br>
+           <label class="fs-3">Profile Picture</label><input type="file" required name="fu" class="form-control mx-auto"  style="height: 50px; border-radius: 10px; width: 95%; margin:0px 5px 0px 10px;box-shadow: 0px 0px 5px  black; border: none;  font-size: 25px;"/><br>
+           <label class="fs-3">Address</label><textarea class="form-control mx-auto" placeholder="Address.." name="address"  style="height: 50px; border-radius: 10px; width: 95%; margin:0px 5px 0px 10px;box-shadow: 0px 0px 5px  black; border: none;  font-size: 25px;"></textarea>
+           <input type="submit" value="Save" class="btn bg-mycolor px-5 py-2 my-4 ms-4 fs-5 btn-large text-light" >
+
+         </form>
+       </div>
+
+</div>
+
+{% endblock%}

@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+About Us
+{% endblock%}
+
+{% block about%}
+
+<script>document.getElementsByTagName("html")[0].className += " js";</script>
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+{% endblock%}
+
+{% block content%}
+<style>
+  .yu {
+    display: flex;
+  }
+
+
+
+  .ty {
+    padding-left: 5%;
+  }
+
+  .ic {
+    padding-left: 5%;
+  }
+</style>
+<!--code-->
+
+<body>
+
+  <header class=" text-center flex flex-column flex-center youprcolor">
+    <div class="text-center fs-1 py-2">
+      About<b class="txtcolor">Us <i class="fa-solid fa-address-card"></i></b>
+    </div>
+
+  </header>
+
+  <section class="cd-timeline js-cd-timeline youprcolor">
+    <div class="container max-width-lg cd-timeline__container">
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--picture">
+          <img src="{% static 'images/cd-icon-picture.svg'%}" alt="Picture">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component"
+          style="border-radius: 10px;box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;padding: 10px;transition: all 1s;">
+          <h2 class="py-2">Our Story</h2>
+
+          <p class="color-contrast-medium">Welcome to Glide<b class="txtcolor">Cart<i
+                class="fa-brands fa-glide-g"></i></b> where passion for quality meets the
+            convenience of online shopping. We're more than just an e-commerce platform; we're a community of
+            enthusiasts dedicated to bringing you the finest products and a seamless shopping experience.</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">2010 Jan 14</span>
+            <a href="#0" class="btn ybgclr text-dark mb-4 mt-1">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block ">
+        <div class="cd-timeline__img cd-timeline__img--movie">
+          <img src="{% static 'images/cd-icon-movie.svg'%}" alt="Movie">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component "
+          style="border-radius: 10px;box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;padding: 10px;transition: all 1s;">
+          <h2 class="py-2">Our Mission and Values</h2>
+          <p class="color-contrast-medium" style="justify-content: center;"><b class="fs-5 text-dark">Our Mission:</b>
+            At Glide<b class="txtcolor">Cart<i class="fa-brands fa-glide-g"></i></b>, our mission is simple: to provide
+            you
+            with access to exceptional products that enhance your life and to do so with unwavering commitment to
+            quality, integrity, and customer satisfaction.</p>
+          <p class="color-contrast-medium"><b class="fs-5 text-dark">Our Values:</b> We uphold a set of core values that
+            guide everything we do:
+            transparency, innovation, sustainability, and customer-centricity.</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">Jan 18</span>
+            <a href="#0" class="btn  ybgclr text-dark mb-4 mt-1">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--picture">
+          <img src="{% static 'images/cd-icon-location.svg'%}" alt="Picture">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component"
+          style="border-radius: 10px;box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;padding: 10px;transition: all 1s;">
+          <h2 class="py-2">Our Journey</h2>
+          <p class="color-contrast-medium"><b class="fs-5 text-dark">Our Beginnings:</b>
+            It all started in 2010 when our founder, Tushika Srivastava,
+            had a vision of making premium products accessible to everyone. With a small team and a big dream, Glide<b class="txtcolor">Cart<i
+              class="fa-brands fa-glide-g"></i></b>  was born.</p>
+            <p class="color-contrast-medium" style="justify-content: center;"><b class="fs-5 text-dark">Milestones:</b>
+             Over the years, we've achieved significant milestones, such as expanding our product range, receiving industry awards, and earning the trust of thousands of satisfied customers.</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">2011 Jan 24</span>
+            <a href="#0" class="btn ybgclr text-dark mb-4 mt-1">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--location">
+          <img src="{% static 'images/cd-icon-picture.svg'%}" alt="Location">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component"
+          style="border-radius: 10px;box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;padding: 10px;transition: all 1s;">
+          <h2 class="py-2"> Meet the Team:</h2>
+          <p class="color-contrast-medium" style="justify-content: center;"><b class="fs-5 text-dark">Leadership: </b>
+            Get to know the people behind Glide<b class="txtcolor">Cart<i
+              class="fa-brands fa-glide-g"></i></b>.<br> Our leadership team brings a wealth of experience and a shared passion for excellence</p>
+          <p class="color-contrast-medium"><b class="fs-5 text-dark">Our Team:</b> Our diverse team of experts, from product curators to customer support, is here to ensure your shopping experience is exceptional</p>
+
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">Feb 14</span>
+            <a href="#0" class="btn  ybgclr text-dark mb-4 mt-1">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--location">
+          <img src="{% static 'images/cd-icon-picture.svg'%}" alt="Location">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component"
+          style="border-radius: 10px;box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;padding: 10px;transition: all 1s;">
+          <h2 class="py-2">Launched a Product</h2>
+          <p class="color-contrast-medium">Glide<b class="txtcolor">Cart<i
+            class="fa-brands fa-glide-g"></i></b> launches B2B Groceries platform Hyperpure</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">Feb 18</span>
+            <a href="#0" class="btn  ybgclr text-dark mb-4 mt-1">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--location">
+          <img src="{% static 'images/cd-icon-picture.svg'%}" alt="Location">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component"
+          style="border-radius: 10px;box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;padding: 10px;transition: all 1s;">
+          <h2 class="py-2">Launched a Product</h2>
+          <p class="color-contrast-medium">Glide<b class="txtcolor">Cart<i
+            class="fa-brands fa-glide-g"></i></b> Offloads UAE Biz To DeliveryHero</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">2010 Feb 25</span>
+            <a href="#0" class="btn  ybgclr text-dark mb-4 mt-1">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--location">
+          <img src="{% static 'images/cd-icon-picture.svg'%}" alt="Location">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component"
+          style="border-radius: 10px;box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;padding: 10px;transition: all 1s;">
+          <h2 class="py-2">Launched a Product</h2>
+          <p class="color-contrast-medium">Glide<b class="txtcolor">Cart<i
+            class="fa-brands fa-glide-g"></i></b> Gold</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">2011 Apr</span>
+            <a href="#0" class="btn  ybgclr text-dark mb-4 mt-1">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--movie">
+          <img src="{% static 'images/cd-icon-location.svg'%}" alt="Movie">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component">
+          <h2 class="py-2">Join Our Journey:</h2>
+          <p class="color-contrast-medium" style="justify-content: center;"><b class="fs-5 text-dark">Connect with Us: </b>
+            We invite you to be a part of our journey. Follow us on social media, subscribe to our newsletter, and join our community of like-minded individuals.</p>
+          <p class="color-contrast-medium"><b class="fs-5 text-dark">Contact Us:</b> Have questions or suggestions? We're here to listen. Contact our dedicated customer support team.</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">Feb 26</span>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+    </div>
+  </section> <!-- cd-timeline -->
+  <div class="row youprcolor mt-4">
+    <div class="text-center fs-2 p-3 mb-3 ">OUR <b class="ytxtcolor ">SERVICES <i
+          class="fa-solid fa-wand-magic-sparkles"></i>
+    </div>
+  </div>
+  <div class="row youprcolor pt-3 pb-5">
+    <div class="col-1 "></div>
+    <div class="col-md-3 col-sm-12 yu border border-1 border-secondary py-4 ">
+      <div class="ic"> <b><i class="fa-solid fa-truck fa-flip-horizontal fs-1 p-2"></i> </b></div>
+      <div class="ty text-dark"><b>FREE SHIPPING</b><br> For all order upto 2000</div>
+    </div>
+    <div class="col-md-4 col-sm-12 yu border border-1 border-secondary py-4">
+      <div class=" ic "> <b><i class="fa-regular fa-clock fs-1 p-2"></i></b></div>
+      <div class="ty  text-dark "><b>DELIVERY ON TIME</b><br> Fastest delivery at doorstep</div>
+    </div>
+    <div class="col-md-3 col-sm-12 yu border border-1 border-secondary py-4">
+      <div class="ic "> <b><i class="fa-solid fa-lock fs-1 p-2"></i> </b></div>
+      <div class="ty text-dark"><b>SECURE PAYMENT</b><br> 100% secure payment</div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+  <script src="{% static 'js/main.js'%}"></script>
+
+</body>
+<!--end code-->
+
+{% endblock%}
