@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from datetime import datetime
@@ -13,8 +13,10 @@ def index(request):
         "cdata":data,"sdata":sliderdata,"pdate":pdate,"odata":opdata,
     }
     return render(request,'user/index.html',md)
+
 def about(request):
     return render(request,'user/aboutus.html')
+
 def contact(request):
     if request.method=="POST":
         a1=request.POST.get('name')
@@ -24,11 +26,11 @@ def contact(request):
         #print(a1,a2,a3,a4)
         contactus(Name=a1,Email=a2,Mobile=a3,Message=a4).save()
         return HttpResponse("<script>alert('Thankyou for contacting us..');location.href='/user/customer/'</script>")
-
     return render(request,'user/contactus.html')
 
 def product(request):
     return render(request,'user/product.html')
+
 def signin(request):
     if request.method=="POST":
         email=request.POST.get('email')
@@ -45,9 +47,8 @@ def signin(request):
             return HttpResponse("<script>location.href='/user/index/'</script>")
         else:
             return HttpResponse("<script>alert('Your Username or Password is incorrect');location.href='/user/signin/'</script>")
-
-
     return render(request,'user/signin.html')
+
 def signup(request):
     if request.method=='POST':
         name=request.POST.get('name')
@@ -62,10 +63,8 @@ def signup(request):
         else:
             register(name=name, mobile=mobile, email=email, passwd=passwd, address=address, profile=pic).save()
             return HttpResponse("<script>alert('You are registered successfully..');location.href='/user/signup/'</script>")
-
-
-
     return render(request,'user/signup.html')
+
 def product(request):
     catid=request.GET.get('cid')
     subcatid=request.GET.get('sid')
@@ -77,8 +76,6 @@ def product(request):
 
     else:
         pdata=myproduct.objects.all().order_by('-id')
-
-
     md={"subcat":sdata,"pdate":pdata,}
     return render(request,'user/product.html',md)
 
@@ -136,7 +133,6 @@ def cartitems(request):
             cart.objects.filter(id=cid).delete()
             cartitems = cart.objects.filter(userid=user).count()
             request.session['cartitems'] = cartitems
-            return HttpResponse("<script>alert('Your cart item is removed');""location.href='/user/cartitems/'</script>")
     md={"cartdata":cartdata}
     return render(request,'user/cartitems.html',md)
 
@@ -149,7 +145,7 @@ def morder(request):
         cart.objects.filter(userid=user).delete()
         cartitems = cart.objects.filter(userid=user).count()
         request.session['cartitems'] = cartitems
-        return HttpResponse("<script>alert('Your order has been placed successfully..');location.href='/user/orderslist/'</script>")
+        return HttpResponse("<script>location.href='/user/orderslist/'</script>")
     return render(request,'user/order.html')
 
 def indexcart(request):
@@ -184,13 +180,12 @@ def mprofile(request):
 
 def orderslist(request):
     oid=request.GET.get('oid')
-    user=request.session.get('user')#techpilelko@gmail.com
+    user=request.session.get('user')
     pdata=myorders.objects.filter(userid=user,status="Pending")
     adata=myorders.objects.filter(userid=user,status="Accepted")
     ddata=myorders.objects.filter(userid=user,status="Delivered")
     if oid is not None:
-        myorders.objects.filter(id=oid)
-        return HttpResponse("<script>alert('You order hase been canceled...');"
-                            "location.href='/user/orderslist/'</script>")
+        myorders.objects.filter(id=oid).delete()
+        return HttpResponse("<script>location.href='/user/orderslist/'</script>")
     mydict={"pdata":pdata,"adata":adata,"ddata":ddata}
     return render(request,'user/orderslist.html',mydict)
