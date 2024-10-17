@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-#mxrh@!cl+(w72t^wv65n+)e8$ibbig71wfjv#6e)(gfjaj52u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['GlideCart.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['glidecart.onrender.com','GlideCart.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
