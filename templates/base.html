@@ -69,6 +69,18 @@
       background: white;
       color:  #79927d;
     }
+    /* Prevent line breaks in the navbar items */
+  .navbar-nav .nav-link {
+    white-space: nowrap;
+  }
+
+  /* Optional: Adjust padding and font size for smaller screens */
+  @media (max-width: 768px) {
+    .navbar-nav .nav-link {
+      padding: 0.5rem 0.75rem; /* Adjust the padding for smaller screens */
+      font-size: 0.9rem; /* Adjust font size if necessary */
+    }
+  }
   </style>
 </head>
 
@@ -79,11 +91,11 @@
       <div class="col-sm-10 mx-auto py-2">
         <div class="row">
           <div class="col-sm-4 fs-1">Glide<b class="txtcolor">Cart<i class="fa-brands fa-glide-g"></i></b></div>
-          <div class="col-sm-3">
+          <div class="col-sm-2">
 
 
           </div>
-          <div class="col-sm-3 text-end">
+          <div class="col-sm-4 text-end">
             {% if request.session.user %}
             <a href="/user/cartitems/" class="btn bg-mycolor text-light fs-5"><i class="fa-solid fa-cart-shopping"></i>
               Items<b class="badge bg-light txtcolor">{{ request.session.cartitems}}</b>
