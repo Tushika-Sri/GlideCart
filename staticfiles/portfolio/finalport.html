@@ -1,0 +1,563 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --mycolor: rgb(49, 48, 48);
+            --my2color: rgb(221, 219, 219);
+        }
+
+        .bg-color {
+            background: var(--mycolor);
+        }
+
+        .bg2-color {
+            background: var(--my2color);
+        }
+
+        .content {
+            min-height: 500px;
+
+
+        }
+
+        .about {
+            min-height: 500px;
+
+        }
+
+        .pic {
+            min-height: 800px;
+            background: url(images/nordwood-themes-kRNZiGKtz48-unsplash.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        .icon {
+            border: 2px solid rgb(49, 48, 48);
+            transition: all 1s;
+            padding: 2px;
+        }
+
+        .icon:hover {
+            transform: rotate(360deg);
+            transition: all 1s;
+            background: var(--mycolor);
+            color: white;
+        }
+
+        .icon2 {
+            animation-name: xyz;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            font-size: 92px;
+            margin: 0px 20px;
+
+        }
+
+        .icon2:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes xyz {
+            from {
+                transform: rotate(0deg);
+
+
+            }
+
+            to {
+                transform: rotate(359deg);
+
+            }
+
+        }
+
+
+        .br {
+            border: 5px solid rgb(49, 48, 48);
+            border-radius: 50%;
+            animation-name: abc;
+            animation-duration: 6s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+
+
+        }
+
+        nav ul li a:hover {
+            color: pink;
+        }
+
+        @keyframes abc {
+            0% {
+                border-radius: 220px 400px 200px 150px;
+                border: 5px solid rgb(49, 48, 48);
+            }
+
+            50% {
+                border-radius: 390px 200px 400px 220px;
+                border: 5px solid rgb(49, 48, 48);
+            }
+
+            100% {
+                border-radius: 390px 360px 280px 300px;
+                border: 5px solid rgb(49, 48, 48);
+            }
+
+
+        }
+
+
+
+
+        .test {
+            height: 150px;
+            width: 96%;
+            margin: 30px auto;
+            align-items: center;
+            background: #e0e0e0;
+            box-shadow: rgb(190, 190, 190) 5px 5px 10px 0px inset, rgb(255, 255, 255) -5px -5px 10px 0px inset;
+            box-sizing: border-box;
+        }
+
+        .pro {
+            min-height: 400px;
+
+        }
+
+        .skill {
+
+            box-sizing: border-box;
+            background: rgb(221, 219, 219);
+
+
+        }
+
+        .skillbr {
+            box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;
+            box-sizing: border-box;
+            background: #e0e0e0;
+            border-radius: 25px;
+        }
+
+
+        .skillbtn {
+            border-radius: 10px;
+            box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;
+            padding: 10px;
+        }
+
+
+        .skillbtn:hover {
+            box-shadow: rgb(172, 172, 172) 5px 5px 10px 0px inset, rgb(255, 255, 255) -5px -5px 10px 0px inset;
+        }
+
+        .sk {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .txt {
+            color: rgb(41, 43, 66);
+        }
+
+        .a {
+            min-height: 500px;
+
+        }
+
+        .b {
+            min-height: 200px;
+
+        }
+
+        .conbtn {
+            border-radius: 50%;
+            box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 10px 0px;
+            padding: 10px;
+            font-size: 50px;
+        }
+
+        .conbtn:hover {
+            box-shadow: rgb(172, 172, 172) 5px 5px 10px 0px inset, rgb(255, 255, 255) -5px -5px 10px 0px inset;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container-fluid bg2-color">
+        <div class="row header bg-color py-2 sticky-top">
+            <div class="col-sm-4 ps-5 fs-3 logo text-light">
+                <div><b>Tushika.sri</b></div>
+            </div>
+            <div class="col-sm-8 menus">
+                <!--start menu-->
+
+                <nav class="navbar navbar-expand-lg m-0 p-0 float-end" id="menu">
+                    <div class="container-fluid">
+                        <!--<a class="navbar-brand fs-3" href="#"> <b style="padding-left: 50px;">Tushika.sri</b></a> -->
+                        <button class="navbar-toggler bg-light " type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-light fs-5 ps-5" aria-current="page"
+                                        href="#"><b>Home</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fs-5 ps-5" href="#aboutid" id="ho"><b>About</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fs-5 ps-5" href="#barid" id="ho"><b>Skill</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fs-5 ps-5" href="#skid"><b>Projects</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fs-5 ps-5" href="#contactid"><b>Contact</b></a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+                <!--end menu-->
+            </div>
+        </div>
+        <div class="row content">
+            <div class="col-lg-2 col-md-12 col-sm-12"></div>
+            <div class="col-lg-4 col-md-12 col-sm-12 pt-5 mt-5  px-4">
+                <b class="fs-1">Full-Stack Developer </b>
+                <p class="fs-5 pt-5">Hi! I am Tushika Srivastava. A full-stack developer based in Lucknow, India.
+                    <i class="fa-solid fa-location-dot"></i>
+                </p>
+                <p class="fs-2"><i class="fa-brands fa-linkedin icon">
+                        <a href="https://www.linkedin.com/in/tushika-srivastava-software-developer/"></a></i> <i
+                        class="fa-brands fa-github icon"></i></p>
+            </div>
+            <div class="col-lg-4 col-md-12  col-sm-12 pt-5 px-4">
+                <img src="images/letsee2.jpeg" alt="" height="400px" class="br">
+            </div>
+            <div class="col-lg-2 col-md-12 col-sm-12"></div>
+        </div>
+
+
+
+        <div class="row ">
+            <div class="col-sm-12 test ">
+                <marquee behavior="alternate-reverse" direction="left" vspace="30px" onmouseleave="start()"
+                    onmouseover="stop()" scrollamount="10">
+                    <i class="fa-brands fa-html5 icon2"></i> <i class="fa-brands fa-css3-alt icon2"></i>
+                    <i class="fa-brands fa-square-js icon2"></i> <i class="fa-brands fa-bootstrap icon2"></i>
+                    <i class="fa-brands fa-python icon2"></i> <i class="fa-solid fa-database icon2"></i> <i
+                        class="fa-brands fa-java icon2"></i>
+                </marquee>
+            </div>
+        </div>
+
+
+        <div class="row  pt-5" id="aboutid">
+            <div class="col-sm-12 a">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="bg-color" style="height: 10px;margin: 25px 0px;"></div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class=" text-center fs-1">ABOUT <b class="text-success">ME</b></div>
+
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="bg-color" style="height: 10px;margin: 25px 0px;"></div>
+                    </div>
+                </div>
+                <div class="fs-3 pt-3 text-center">The Full Stack Maestro: Building Digital Worlds from Front to Back
+                </div>
+                <div class="container">
+                    <div class="row my-5">
+                        <div class="col-lg-6 col-md-12  a">
+                            <div class="row">
+
+                                <div class="col-sm-12 col-md-12 a">
+
+                                    <div class="px-5"> <small
+                                            style="font-family: 'Reenie Beanie', cursive; font-size: 62px;">That's me <i
+                                                class="fa-solid fa-arrow-pointer fa-rotate-180 "></i></small>
+                                    </div>
+                                    <img src="images/681D5D04-7790-4465-BC96-25218FDA2893_4_5005_c.jpeg" alt=""
+                                        class=" bg2-color p-3  img-fluid  mt-5 " style=" transform: rotate(-18deg);
+                             box-sizing: border-box;    box-shadow: rgb(184, 184, 184) 5px 5px 15px 0px,
+                             rgb(255, 255, 255) -5px -5px 10px 0px;">
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 a py-5" style="font-size: 18px; text-align: justify; ">
+                            <p>
+                                In the ever-expanding universe of technology, I've embraced the role of the Full Stack
+                                Maestro, orchestrating symphonies of code that traverse the entire spectrum of web
+                                development. My journey into the digital cosmos began with a desire to not just build
+                                websites but to craft seamless digital experiences from start to finish.
+                            </p>
+                            <p>
+                                From the elegant user interfaces I sculpt with HTML, CSS, and JavaScript ,to the robust
+                                server-side
+                                architectures I engineer using Django, Python. I thrive on mastering the intricate dance
+                                between front-end and back-end technologies. The thrill of connecting these worlds and
+                                creating cohesive digital ecosystems is what drives me.
+                            </p>
+                            <p>
+                                I specialize in responsive design, ensuring that the stories I tell are accessible to
+                                all, no matter the device or platform. I believe that every click should be intuitive,
+                                every animation purposeful, and every piece of content engaging.
+                            </p>
+                            <p>
+                                If you're seeking someone who can turn the cacophony of complexity into a harmonious
+                                code symphony, whether you need sleek portfolio, an e-commerce wonderland, a dynamic
+                                web app, or a data-driven dashboard, then let's collaborate.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 b text-left">
+                            <div class="fs-3 pb-3"> THINGS I'M EXPERIENCED WITH</div>
+                            <div><i class="fa-brands fa-windows pe-5" style="font-size: 92px;"></i> <i
+                                    class="fa-brands fa-apple" style="font-size: 102px;"></i></div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 b text-left">
+                            <div class="fs-3 pb-3 "> LOOK WHAT I CAN DO</div>
+                            <div class="row">
+                                <div class="col-sm-6 fs-4 txt">
+                                    <p> <b class="text-success">+</b>Web Developer</p>
+                                    <p> <b class="text-success">+</b>Wordpress</p>
+
+                                </div>
+                                <div class="col-sm-6 fs-4 txt">
+                                    <p> <b class="text-success">+</b>HTML/CSS/JS</p>
+                                    <p> <b class="text-success">+</b>Bootstrap</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="row pic" id="barid">
+            <div class="col-sm-12 my-5">
+                <div class="row sk my-5 py-5">
+                    <div class="col-sm-12 ">
+                        <div class=" fs-1 text-center text-light">TECHNICAL <b class="">SKILLS</b></div>
+                        <h4 class="text-light">HTML</h4>
+                        <div class="progress mt-1 mb-1 bg-dark" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                            style="height: 20px; border-radius: 15px; padding: 2px 15 2px 2px;">
+                            <div class="progress-bar"
+                                style="width: 100%; border-radius: 15px;background-color: #039BE5;"></div>
+                        </div>
+                        <h4 class="text-light">CSS</h4>
+                        <div class="progress mt-1 mb-1 bg-dark" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                            style="height: 20px; border-radius: 15px; padding: 2px 15 2px 2px;">
+                            <div class="progress-bar bg-info" style="width: 100%; border-radius: 15px;"></div>
+                        </div>
+
+                        <h4 class="text-light">JAVASCRIPT</h4>
+                        <div class="progress  mt-1 mb-1 bg-dark" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+                            style="height: 20px; border-radius: 15px; padding: 2px 15 2px 2px;">
+                            <div class="progress-bar"
+                                style="width: 100%; border-radius: 15px;background-color: #2196F3;"></div>
+                        </div>
+                        <h4 class="text-light">JQUERY</h4>
+                        <div class="progress mt-1 mb-1 bg-dark" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                            style="height: 20px; border-radius: 15px; padding: 2px 15 2px 2px;">
+                            <div class="progress-bar"
+                                style="width: 75%; border-radius: 15px;background-color: #26A69A;"></div>
+                        </div>
+                        <h4 class="text-light">BOOTSTRAP</h4>
+                        <div class="progress mt-1 mb-1 bg-dark" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                            style="height: 20px; border-radius: 15px;  padding: 2px 15 2px 2px;">
+                            <div class="progress-bar bg-success" style="width: 100%; border-radius: 15px;"></div>
+                        </div>
+                        <h4 class="text-light">PYTHON</h4>
+                        <div class="progress mt-1 mb-1 bg-dark" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                            style="height: 20px; border-radius: 15px;  padding: 2px 15 2px 2px;">
+                            <div class="progress-bar"
+                                style="width: 100%; border-radius: 15px;background-color: #2962FF;"></div>
+                        </div>
+                        <h4 class="text-light">JAVA</h4>
+                        <div class="progress mt-1 mb-1 bg-dark" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                            style="height: 20px; border-radius: 15px;  padding: 2px 15 2px 2px;">
+                            <div class="progress-bar"
+                                style="width: 100%; border-radius: 15px;background-color: #2962FF;"></div>
+                        </div>
+                        <h4 class="text-light">C</h4>
+                        <div class="progress mt-1 mb-1 bg-dark" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                            style="height: 20px; border-radius: 15px;  padding: 2px 15 2px 2px;">
+                            <div class="progress-bar"
+                                style="width: 100%; border-radius: 15px;background-color: #2962FF;"></div>
+                        </div>
+                        <h4 class="text-light">SQL</h4>
+                        <div class="progress mt-1 mb-1 bg-dark" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                            style="height: 20px; border-radius: 15px;  padding: 2px 15 2px 2px;">
+                            <div class="progress-bar"
+                                style="width: 100%; border-radius: 15px;background-color: #2962FF;"></div>
+                        </div>
+                        <h4 class="text-light">Django</h4>
+                        <div class="progress mt-1 mb-1 bg-dark" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                            style="height: 20px; border-radius: 15px;  padding: 2px 15 2px 2px;">
+                            <div class="progress-bar"
+                                style="width: 80%; border-radius: 15px;background-color: #2962FF;"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="container" id="skid">
+            <div class="row skill mt-5">
+                <div class="text-center fs-1 mt-3">MY &nbsp;&nbsp;<b>PROJECTS
+                    </b>
+                </div>
+
+                <div class="col-md-4 col-sm-12 pro ">
+                    <div class="row py-5 my-1">
+                        <div class="col-sm-1 "></div>
+                        <div class="col-sm-10 skillbr p-3 ">
+                            <div><img src="images/shopwat.jpg" alt="" class="img-thumbnail"></div>
+                            <div style="text-align: justify;">
+                                <p style="font-size: 28px;text-align: center;">SHOPPING SITE </p>
+                                <p>I've woven a tapestry of pixels and code, transforming concepts into interactive
+                                    realities. From the alchemy of HTML and CSS to the sorcery of Bootstrap, I've honed
+                                    my skills to create seamless and immersive online shopping webpage.
+
+                                </p>
+                            </div>
+                            <div class="row pt-3 pb-4">
+                                <div class="col-6"><a href="task7.html" class="btn  float-start skillbtn">View Live</a>
+                                </div>
+                                <div class="col-6"> <a href="https://github.com/Tushika-Sri/Shopping"
+                                        class="btn skillbtn float-end">View on Github</a></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 pro ">
+                    <div class="row py-5 my-1">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-10 skillbr p-3 ">
+                            <div><img src="images/portwat.jpg" alt="" class="img-thumbnail"></div>
+                            <div style="text-align: justify;">
+                                <p style="font-size: 28px;text-align: center;">RESPONSIVE PORTFOLIO </p>
+                                <p> Built using technologies HTML, CSS, JS, BOOTSTRAP-it's grid system to create a responsive layout that automatically
+                                    adjusts to different screen sizes. Use responsive image classes to optimize image
+                                    loading on various screen sizes.
+
+                                </p>
+                            </div>
+                            <div class="row pt-3 pb-4">
+                                <div class="col-6"><a href="#" class="btn skillbtn float-start">View Live</a></div>
+                                <div class="col-6"> <a href="#" class="btn skillbtn float-end">View on Github</a></div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 pro ">
+                    <div class="row py-5 my-1">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-10 skillbr p-3 ">
+                            <div><img src="images/zeptowat.jpg" alt="" class="img-thumbnail"></div>
+                            <div style="text-align: justify;">
+                                <p style="font-size: 28px;text-align: center;">10MinZepto WEBSITE </p>
+                                <p >
+                                    10MinZepto is a revolutionary online platform built with Django and powered by
+                                    Python to provide lightning-fast delivery services, ensuring that customers receive
+                                    their orders within a remarkable 10 minute window.
+                                </p>
+                            </div>
+                            <div class="row pt-3 pb-4">
+                                <div class="col-6"><a href="#" class="btn skillbtn float-start">View Live</a></div>
+                                <div class="col-6"> <a href="#" class="btn skillbtn float-end">View on Github</a></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="row pb-5 " id="contactid">
+
+
+            <div>
+                <center>
+                    <a href="mailto:tushi0911@gmail.com" class="btn conbtn mx-3"><img
+                            src="images/7DCF5A12-1293-47E1-8B3F-7476F11AF777.png" alt="" height="49px"></a>
+                    <a href="https://www.linkedin.com/in/tushika-srivastava-software-developer"
+                        class="btn conbtn mx-3"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Tushika-Sri" class="btn conbtn mx-3"><i
+                            class="fa-brands fa-github "></i></a>
+                </center>
+            </div>
+
+
+        </div>
+        <div class="row footer bg-color text-light" style="height: 50px;line-height: 50px;">
+            <center>Copyright &#169; 2023 . All rights reserved</center>
+        </div>
+
+    </div>
+    <script src="js/bootstrap.bundle.js"></script>
+
+
+
+
+</body>
+
+
+</html>

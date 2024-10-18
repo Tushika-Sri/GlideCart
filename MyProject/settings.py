@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-#mxrh@!cl+(w72t^wv65n+)e8$ibbig71wfjv#6e)(gfjaj52u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['glidecart.onrender.com','GlideCart.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['glidecart.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -118,6 +119,7 @@ USE_TZ = True
 STATIC_DIR=BASE_DIR/'static'
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[STATIC_DIR]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
